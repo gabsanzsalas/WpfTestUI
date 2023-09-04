@@ -1,0 +1,17 @@
+﻿<UserControl x:Name="userControl" x:Class="WpfTestUI.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfTestUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding ElementName=userControl}"
+             >
+    <Grid>
+        <Label x:Name="lblStatus" Content="{Binding Path= EStatus }"
+       HorizontalContentAlignment="Center" VerticalAlignment="Center"  Foreground="White" FontSize="36" Height="60" Background="#FF131111" HorizontalAlignment="Center" Width="100"/>
+        <Rectangle x:Name="recBackBlue" Stroke="Black" Fill="#FF0D206D"/>
+        
+    </Grid>
+</UserControl>
