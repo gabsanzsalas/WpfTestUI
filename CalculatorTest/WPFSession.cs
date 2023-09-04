@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace CalculatorTest
 {
-    public class CalculatorSession
+    public class WPFSession
     {
         private const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
         private const string pathApp = @"C:\prova wpf\WpfTestUI\WpfTestUI\bin\Debug\net6.0-windows\WpfTestUI.exe";

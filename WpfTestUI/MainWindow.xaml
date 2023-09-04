@@ -14,9 +14,9 @@
         <local:UserControl1 x:Name="UColors1"  HorizontalAlignment="Left" Margin="296,19,0,0" VerticalAlignment="Top" Height="128" Width="136"/>
         <Button x:Name="btnBlue" Content="Blue" HorizontalAlignment="Left" Margin="58,28,0,0" VerticalAlignment="Top" Height="42" Width="158" Click="btnBlue_Click"/>
         <Button x:Name="btnRed" Content="Red" HorizontalAlignment="Left" Margin="58,92,0,0" VerticalAlignment="Top" Height="37" Width="158" Click="btnRed_Click"/>
-        <local:UserControl1 x:Name="UColors2"  HorizontalAlignment="Left" Margin="422,88,0,0" VerticalAlignment="Top" Height="128" Width="136" Grid.Row="1" EStatus="ERed"/>
-        <Button x:Name="btnBlue_Copy" Content="Blue" HorizontalAlignment="Left" Margin="184,97,0,0" VerticalAlignment="Top" Height="42" Width="158" Click="btnBlue_Click" Grid.Row="1"/>
-        <Button x:Name="btnRed_Copy" Content="Red" HorizontalAlignment="Left" Margin="184,161,0,0" VerticalAlignment="Top" Height="37" Width="158" Click="btnRed_Click" Grid.Row="1"/>
+        <local:UserControl1 x:Name="UColors2"  HorizontalAlignment="Left" Margin="296,47,0,0" VerticalAlignment="Top" Height="128" Width="136" Grid.Row="1" EStatus="ERed"/>
+        <Button x:Name="btnBlue2" Content="Blue" HorizontalAlignment="Left" Margin="58,56,0,0" VerticalAlignment="Top" Height="42" Width="158" Click="BtnBlue2_Click" Grid.Row="1"/>
+        <Button x:Name="btnRed2" Content="Red" HorizontalAlignment="Left" Margin="58,120,0,0" VerticalAlignment="Top" Height="37" Width="158" Click="BtnRed2_Click" Grid.Row="1"/>
 
     </Grid>
 </Window>

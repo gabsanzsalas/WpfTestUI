@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfTestUI", "WpfTestUI\WpfTestUI.csproj", "{5CA02DB6-563A-42C6-8966-148AEFC42664}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorTest", "CalculatorTest\CalculatorTest.csproj", "{B2C5ADFF-D6B5-48C1-BB8C-571BFD583D7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTest", "CalculatorTest\WPFTest.csproj", "{B2C5ADFF-D6B5-48C1-BB8C-571BFD583D7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
