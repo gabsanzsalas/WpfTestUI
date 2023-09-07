@@ -7,16 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="21*"/>
-            <RowDefinition Height="41*"/>
-        </Grid.RowDefinitions>
-        <local:UserControl1 x:Name="UColors1"  HorizontalAlignment="Left" Margin="296,19,0,0" VerticalAlignment="Top" Height="128" Width="136"/>
-        <Button x:Name="btnBlue" Content="Blue" HorizontalAlignment="Left" Margin="58,28,0,0" VerticalAlignment="Top" Height="42" Width="158" Click="btnBlue_Click"/>
-        <Button x:Name="btnRed" Content="Red" HorizontalAlignment="Left" Margin="58,92,0,0" VerticalAlignment="Top" Height="37" Width="158" Click="btnRed_Click"/>
-        <local:UserControl1 x:Name="UColors2"  HorizontalAlignment="Left" Margin="296,47,0,0" VerticalAlignment="Top" Height="128" Width="136" Grid.Row="1" EStatus="ERed"/>
-        <Button x:Name="btnBlue2" Content="Blue" HorizontalAlignment="Left" Margin="58,56,0,0" VerticalAlignment="Top" Height="42" Width="158" Click="BtnBlue2_Click" Grid.Row="1"/>
-        <Button x:Name="btnRed2" Content="Red" HorizontalAlignment="Left" Margin="58,120,0,0" VerticalAlignment="Top" Height="37" Width="158" Click="BtnRed2_Click" Grid.Row="1"/>
-
+        <Button x:Name="btnMeasuring" Content="Measuring" HorizontalAlignment="Left" Margin="58,19,0,0" VerticalAlignment="Top" Height="42" Width="158" Click="btnMeasuring_Click"/>
+        <Button x:Name="btnWorking" Content="Working" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" Height="38" Width="158" Click="btnWorking_Click"/>
+        <Button x:Name="btnIdle" Content="Idle" HorizontalAlignment="Left" Margin="568,19,0,0" VerticalAlignment="Top" Height="42" Width="158" Click="btnIdle_Click"/>
+        <local:ElipseControl  x:Name="ElipseControl"  HorizontalAlignment="Left" Margin="4,174,0,0" VerticalAlignment="Top" Width="296" Height="126" ElipseStatus="EMisuring"/>
+        <local:FillControl x:Name="RectangleControl"  HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" Height="123" Width="158" RectangleStatus="EIdle"/>
+        <local:BackgroundControl x:Name="BackgroundControl"  HorizontalAlignment="Left" Margin="568,174,0,0" VerticalAlignment="Top" Width="173" Height="126"/>
     </Grid>
 </Window>

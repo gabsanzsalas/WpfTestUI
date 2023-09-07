@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static WpfTestUI.UIStatus;
 
 namespace WpfTestUI
 {
@@ -25,32 +26,25 @@ namespace WpfTestUI
         {
             InitializeComponent();
         }
-        private void btnBlue_Click(object sender, RoutedEventArgs e)
+        private void btnMeasuring_Click(object sender, RoutedEventArgs e)
         {
-            UColors1.EStatus = StatusColors.EBlue;
-            Brush blueBrush = new SolidColorBrush(Colors.Blue);
-            UColors1.recBackBlue.Fill = blueBrush;
+            ElipseControl.ElipseStatus = StatusColorsUI.EMisuring;
+            RectangleControl.RectangleStatus = StatusColorsUI.EMisuring;
+            BackgroundControl.BackgroundStatus = StatusColorsUI.EMisuring;
         }
 
-        private void btnRed_Click(object sender, RoutedEventArgs e)
+        private void btnWorking_Click(object sender, RoutedEventArgs e)
         {
-            Brush redBrush = new SolidColorBrush(Colors.Red);
-            UColors1.recBackBlue.Fill = redBrush;
-            UColors1.EStatus = StatusColors.ERed;
+            ElipseControl.ElipseStatus = StatusColorsUI.EWorking;
+            RectangleControl.RectangleStatus = StatusColorsUI.EWorking;
+            BackgroundControl.BackgroundStatus = StatusColorsUI.EWorking;
         }
 
-        private void BtnBlue2_Click(object sender, RoutedEventArgs e)
+        private void btnIdle_Click(object sender, RoutedEventArgs e)
         {
-            UColors2.EStatus = StatusColors.EBlue;
-            Brush blueBrush = new SolidColorBrush(Colors.Blue);
-            UColors2.recBackBlue.Fill = blueBrush;
-        }
-
-        private void BtnRed2_Click(object sender, RoutedEventArgs e)
-        {
-            Brush redBrush = new SolidColorBrush(Colors.Red);
-            UColors2.recBackBlue.Fill = redBrush;
-            UColors2.EStatus = StatusColors.ERed;
+            ElipseControl.ElipseStatus = StatusColorsUI.EIdle;
+            RectangleControl.RectangleStatus = StatusColorsUI.EIdle;
+            BackgroundControl.BackgroundStatus = StatusColorsUI.EIdle;
         }
     }
 }
