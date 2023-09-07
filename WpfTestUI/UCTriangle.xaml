@@ -12,9 +12,9 @@
     <Grid>
         <local:UIStatusLabel  UIStatusString="{Binding UIStatusString, RelativeSource={RelativeSource AncestorType=UserControl}}"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="85" Width="230"/>
         <Grid HorizontalAlignment="Center" Height="189" VerticalAlignment="Center" Width="200">
-            <Rectangle Fill="{Binding Path= TriangleFill}" HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-            <Rectangle Fill="{Binding Path= TriangleFill}" HorizontalAlignment="Center" Height="100" Margin="0,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-            <Rectangle Fill="{Binding Path= TriangleFill}" HorizontalAlignment="Left" Height="100" Margin="100,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <Path Fill="{Binding Path= TriangleFill}" StrokeThickness="1" Stroke="#FFA3A3A3" Opacity="0.7" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            Data="m 1 2 l 4.0525 5.2361 l 4.0527 -5.2361 z" Height="104" Stretch="Fill" Width="132" />
 
         </Grid>
 
