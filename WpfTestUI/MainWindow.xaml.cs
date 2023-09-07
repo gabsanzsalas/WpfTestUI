@@ -38,6 +38,7 @@ namespace WpfTestUI
             ElipseControl.ElipseStatus = StatusColorsUI.EWorking;
             RectangleControl.RectangleStatus = StatusColorsUI.EWorking;
             BackgroundControl.BackgroundStatus = StatusColorsUI.EWorking;
+            TriangleControl.UIStatusLabel = StatusTriangle.Online;
         }
 
         private void btnIdle_Click(object sender, RoutedEventArgs e)
@@ -45,6 +46,10 @@ namespace WpfTestUI
             ElipseControl.ElipseStatus = StatusColorsUI.EIdle;
             RectangleControl.RectangleStatus = StatusColorsUI.EIdle;
             BackgroundControl.BackgroundStatus = StatusColorsUI.EIdle;
+            TriangleControl.UIStatusLabel = StatusTriangle.Offline;
+
+
         }
+
     }
 }
