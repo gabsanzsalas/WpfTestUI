@@ -1,60 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+﻿using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static WpfTestUI.UIStatus;
 
 namespace WpfTestUI
 {
     /// <summary>
     /// Logica di interazione per BackgroundControl.xaml
     /// </summary>
-    public partial class BackgroundControl : UserControl
+    public partial class BackgroundControl : UCTestableStatus<StatusBG>, IUCTestableStatus<StatusBG>
     {
+        public static readonly DependencyProperty BGFillProperty = DependencyProperty.Register("BGFill", typeof(Brush), typeof(BackgroundControl));
 
-        public static readonly DependencyProperty BackgroundStatusProperty =
-           DependencyProperty.Register("BackgroundStatus", typeof(StatusColorsUI), typeof(BackgroundControl), new PropertyMetadata(StatusColorsUI.EIdle));
-
-        public static readonly DependencyProperty BackgroundFillProperty =
-            DependencyProperty.Register("BackgroundFill", typeof(Brush), typeof(BackgroundControl));
-
-
-        public StatusColorsUI BackgroundStatus
+        public override void SetStatus(StatusBG status)
         {
-            get { return (StatusColorsUI)GetValue(BackgroundStatusProperty); }
-            set
+            switch (status)
             {
-                SetValue(BackgroundStatusProperty, value);
-                switch (value)
-                {
-                    case StatusColorsUI.EMisuring:
-                        this.SetValue(BackgroundFillProperty, new SolidColorBrush(Colors.Green));
-                        break;
-                    case StatusColorsUI.EWorking:
-                        this.SetValue(BackgroundFillProperty, new SolidColorBrush(Colors.Red));
-                        break;
-                    case StatusColorsUI.EIdle:
-                        this.SetValue(BackgroundFillProperty, new SolidColorBrush(Colors.PowderBlue));
-                        break;
-                    default:
-                        this.SetValue(BackgroundFillProperty, new SolidColorBrush(Colors.Black));
-                        break;
-                };
-            }
+                case StatusBG.Fill:
+                    this.SetValue(BGFillProperty, new SolidColorBrush(Colors.Green));
+                    break;
+                case StatusBG.NotFill:
+                    this.SetValue(BGFillProperty, new SolidColorBrush(Colors.Red));
+                    break;
+                case StatusBG.Idle:
+                    this.SetValue(BGFillProperty, new SolidColorBrush(Colors.White));
+                    break;
+            };
         }
         public BackgroundControl()
         {
             InitializeComponent();
         }
+    }
+    public enum StatusBG
+    {
+        Fill,
+        NotFill,
+        Idle
     }
 }

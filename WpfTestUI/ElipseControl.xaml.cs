@@ -1,60 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+﻿using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static WpfTestUI.UIStatus;
+
 
 namespace WpfTestUI
 {
     /// <summary>
     /// Logica di interazione per ElipseControl.xaml
     /// </summary>
-    public partial class ElipseControl : UserControl
+    public partial class ElipseControl : UCTestableStatus<StatusElipse>, IUCTestableStatus<StatusElipse>
     {
-        public static readonly DependencyProperty ElipseStatusProperty =
-            DependencyProperty.Register("ElipseStatus", typeof(StatusColorsUI), typeof(ElipseControl) , new PropertyMetadata(StatusColorsUI.EIdle));
+        public static readonly DependencyProperty ElipseFillProperty = DependencyProperty.Register("ElipseFill", typeof(Brush), typeof(ElipseControl));
 
-        public static readonly DependencyProperty ElipseFillProperty =
-            DependencyProperty.Register("ElipseFill", typeof(Brush), typeof(ElipseControl));
-
-
-        public StatusColorsUI ElipseStatus
+        public override void SetStatus(StatusElipse status)
         {
-            get { return (StatusColorsUI)GetValue(ElipseStatusProperty); }
-            set
+            switch (status)
             {
-                SetValue(ElipseStatusProperty, value);
-                switch (value)
-                {
-                    case StatusColorsUI.EMisuring:
-                        this.SetValue(ElipseFillProperty, new SolidColorBrush(Colors.Green));
-                        break;
-                    case StatusColorsUI.EWorking:
-                        this.SetValue(ElipseFillProperty, new SolidColorBrush(Colors.Red));
-                        break;
-                    case StatusColorsUI.EIdle:
-                        this.SetValue(ElipseFillProperty, new SolidColorBrush(Colors.Gray));
-                        break;
-                    default:
-                        this.SetValue(ElipseFillProperty, new SolidColorBrush(Colors.Black));
-                        break;
-                };
-            }
+                case StatusElipse.Yes:
+                    this.SetValue(ElipseFillProperty, new SolidColorBrush(Colors.Green));
+                    break;
+                case StatusElipse.Not:
+                    this.SetValue(ElipseFillProperty, new SolidColorBrush(Colors.Red));
+                    break;
+                case StatusElipse.Idle:
+                    this.SetValue(ElipseFillProperty, new SolidColorBrush(Colors.White));
+                    break;
+            };
         }
         public ElipseControl()
         {
             InitializeComponent();
         }
+
+}
+    public enum StatusElipse
+    {
+        Yes,
+        Not,
+        Idle
     }
 }

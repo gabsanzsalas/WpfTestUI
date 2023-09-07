@@ -1,19 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+﻿using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static WpfTestUI.UIStatus;
+
 
 namespace WpfTestUI
 {
@@ -39,6 +26,9 @@ namespace WpfTestUI
                 case StatusTriangle.Offline:
                     this.SetValue(TriangleFillProperty, new SolidColorBrush(Colors.Red));
                     break;
+                case StatusTriangle.Idle:
+                    this.SetValue(TriangleFillProperty, new SolidColorBrush(Colors.White));
+                    break;
             };
         }
     }
@@ -46,6 +36,7 @@ namespace WpfTestUI
     public enum StatusTriangle
     {
         Online,
-        Offline
+        Offline,
+        Idle
     }
 }

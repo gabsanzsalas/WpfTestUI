@@ -11,30 +11,39 @@ namespace CalculatorTest
     {
 
         protected WindowsElement ElipseControl;
-        protected AppiumWebElement WEElipseControl;
-        protected AppiumWebElement ElementoAllinternoDiUIStatusElipse;
         protected WindowsElement RectangleControl;
-        protected AppiumWebElement WERectangleControl;
-        protected AppiumWebElement ElementoAllinternoDiUIStatusRectangle;
         protected WindowsElement BackgroundControl;
-        protected AppiumWebElement WEBackgroundControl;
+        protected WindowsElement TriangleControl;
+
+        protected AppiumWebElement ElementElipseControl;
+        protected AppiumWebElement ElementRectangleControl;
+        protected AppiumWebElement ElementBackgroundControl;
+        protected AppiumWebElement ElementTriangleControl;
+
+
+        protected AppiumWebElement ElementoAllinternoDiUIStatusElipse;
+        protected AppiumWebElement ElementoAllinternoDiUIStatusRectangle;
         protected AppiumWebElement ElementoAllinternoDiUIStatusBG;
+        protected AppiumWebElement ElementoAllinternoDiUIStatusTriangle;
 
 
         public void BaseTest()
         {
 
             ElipseControl = session.FindElementByAccessibilityId("ElipseControl");
-            WEElipseControl = ElipseControl.FindElementByAccessibilityId("UIStatus");
-            ElementoAllinternoDiUIStatusElipse = WEElipseControl.FindElementByAccessibilityId("lblStatus");
-
             RectangleControl = session.FindElementByAccessibilityId("RectangleControl");
-            WERectangleControl = RectangleControl.FindElementByAccessibilityId("UIStatusR");
-            ElementoAllinternoDiUIStatusRectangle = WERectangleControl.FindElementByAccessibilityId("lblStatus");
-
             BackgroundControl = session.FindElementByAccessibilityId("BackgroundControl");
-            WEBackgroundControl = BackgroundControl.FindElementByAccessibilityId("UIStatusB");
-            ElementoAllinternoDiUIStatusBG = WEElipseControl.FindElementByAccessibilityId("lblStatus");
+            TriangleControl = session.FindElementByAccessibilityId("TriangleControl");
+
+            ElementElipseControl = ElipseControl.FindElementByAccessibilityId("StatusLabelElipse");
+            ElementRectangleControl = RectangleControl.FindElementByAccessibilityId("StatusLabelFill");
+            ElementBackgroundControl = BackgroundControl.FindElementByAccessibilityId("StatusLabelBG");
+            ElementTriangleControl = TriangleControl.FindElementByAccessibilityId("StatusLabelTriangle");
+
+            ElementoAllinternoDiUIStatusElipse = ElementElipseControl.FindElementByAccessibilityId("lblStatus");
+            ElementoAllinternoDiUIStatusRectangle = ElementRectangleControl.FindElementByAccessibilityId("lblStatus");
+            ElementoAllinternoDiUIStatusBG = ElementBackgroundControl.FindElementByAccessibilityId("lblStatus");
+            ElementoAllinternoDiUIStatusTriangle = ElementTriangleControl.FindElementByAccessibilityId("lblStatus");
         }
 
         [TestMethod]
@@ -48,31 +57,34 @@ namespace CalculatorTest
         {
             session.FindElementByAccessibilityId("btnMeasuring").Click();
             BaseTest();
-            Assert.AreEqual("EMisuring", ElementoAllinternoDiUIStatusElipse.Text);
-            Assert.AreEqual("EMisuring", ElementoAllinternoDiUIStatusRectangle.Text);
-            Assert.AreEqual("EMisuring", ElementoAllinternoDiUIStatusBG.Text);
+            Assert.AreEqual("Yes", ElementoAllinternoDiUIStatusElipse.Text);
+            Assert.AreEqual("Fill", ElementoAllinternoDiUIStatusBG.Text);
+            Assert.AreEqual("Online", ElementoAllinternoDiUIStatusTriangle.Text);
+            Assert.AreEqual("Open", ElementoAllinternoDiUIStatusRectangle.Text);
         }
 
         [TestMethod]
-        public void ClickButtonRed1()
+        public void ClickButtonWorking()
         {
             session.FindElementByAccessibilityId("btnWorking").Click();
             BaseTest();
-            Assert.AreEqual("EWorking", ElementoAllinternoDiUIStatusElipse.Text);
-            Assert.AreEqual("EWorking", ElementoAllinternoDiUIStatusRectangle.Text);
-            Assert.AreEqual("EWorking", ElementoAllinternoDiUIStatusBG.Text);
+            Assert.AreEqual("Not", ElementoAllinternoDiUIStatusElipse.Text);
+            Assert.AreEqual("NotFill", ElementoAllinternoDiUIStatusBG.Text);
+            Assert.AreEqual("Offline", ElementoAllinternoDiUIStatusTriangle.Text);
+            Assert.AreEqual("Close", ElementoAllinternoDiUIStatusRectangle.Text);
 
         }
 
 
         [TestMethod]
-        public void ClickButtonReset1()
+        public void ClickButtonIdle()
         {
             session.FindElementByAccessibilityId("btnIdle").Click();
             BaseTest();
-            Assert.AreEqual("EIdle", ElementoAllinternoDiUIStatusElipse.Text);
-            Assert.AreEqual("EIdle", ElementoAllinternoDiUIStatusRectangle.Text);
-            Assert.AreEqual("EIdle", ElementoAllinternoDiUIStatusBG.Text);
+            Assert.AreEqual("Idle", ElementoAllinternoDiUIStatusElipse.Text);
+            Assert.AreEqual("Idle", ElementoAllinternoDiUIStatusBG.Text);
+            Assert.AreEqual("Idle", ElementoAllinternoDiUIStatusTriangle.Text);
+            Assert.AreEqual("Idle", ElementoAllinternoDiUIStatusRectangle.Text);
 
         }
 
