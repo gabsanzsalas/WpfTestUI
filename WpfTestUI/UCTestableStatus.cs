@@ -18,15 +18,25 @@ namespace WpfTestUI
         public static readonly DependencyProperty UIStatusProperty =
             DependencyProperty.Register("UIStatusLabel", typeof(TStatus), typeof(UCTestableStatus<TStatus>));
 
+        public static readonly DependencyProperty UIStatusStringProperty =
+            DependencyProperty.Register("UIStatusString", typeof(string), typeof(UCTestableStatus<TStatus>));
+
+
         public TStatus UIStatusLabel
         {
             get { return (TStatus)this.GetValue(UIStatusProperty); }
             set
             {
                 this.SetValue(UIStatusProperty, value);
+                this.SetValue(UIStatusStringProperty, value.ToString());
                 SetStatus(value);
 
             }
+        }
+
+        public string? UIStatusString
+        {
+            get { return this.GetValue(UIStatusStringProperty).ToString(); }
         }
 
         public virtual void SetStatus(TStatus status)

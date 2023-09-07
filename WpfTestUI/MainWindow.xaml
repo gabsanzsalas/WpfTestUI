@@ -13,6 +13,6 @@
         <local:ElipseControl  x:Name="ElipseControl"  HorizontalAlignment="Left" Margin="4,174,0,0" VerticalAlignment="Top" Width="296" Height="126" ElipseStatus="EMisuring"/>
         <local:FillControl x:Name="RectangleControl"  HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" Height="123" Width="158" RectangleStatus="EIdle"/>
         <local:BackgroundControl x:Name="BackgroundControl"  HorizontalAlignment="Left" Margin="568,174,0,0" VerticalAlignment="Top" Width="173" Height="126"/>
-        <local:UCTriangle x:Name="TriangleControl" HorizontalAlignment="Left" Margin="175,297,0,0" VerticalAlignment="Top" Height="127" Width="166"/>
+        <local:UCTriangle x:Name="TriangleControl" HorizontalAlignment="Left" Margin="175,149,0,0" VerticalAlignment="Top" Height="275" Width="520"/>
     </Grid>
 </Window>
